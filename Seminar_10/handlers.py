@@ -1,4 +1,5 @@
 import random
+
 import config
 from creat_bot import dp
 from aiogram.types import Message
@@ -7,7 +8,8 @@ from aiogram.types import Message
 @dp.message_handler(commands=['start', 'начать'])
 async def mes_start(message: Message):
     await message.answer(text=f'{message.from_user.first_name}, привет!\n'
-                         f'Сегодня мы с тобой поиграем в интересную игру')
+                              f'Сегодня мы с тобой поиграем в интересную игру.\n'
+                              f'Для старта жми: /new\n')
 
 @dp.message_handler(commands=['new'])
 async def mes_new_game(message: Message):
